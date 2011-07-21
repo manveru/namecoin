@@ -648,9 +648,9 @@ inline bool TerminateThread(pthread_t hthread, unsigned int nExitCode)
     return (pthread_cancel(hthread) == 0);
 }
 
-inline void ExitThread(unsigned int nExitCode)
+inline void ExitThread(void* nExitCode)
 {
-    pthread_exit((void*)nExitCode);
+    pthread_exit(nExitCode);
 }
 #endif
 
